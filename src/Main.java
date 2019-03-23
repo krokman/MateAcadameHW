@@ -8,19 +8,19 @@ public class Main{
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException{
-	    start.footbalMatch(); //exс 1.1
+	    start.footballMatch(); //exс 1.1
         start.rhombusDisplay(); //exc 1.2
         start.degreeOf(); //exc 1.3
         start.recursionDisplay(); //exc 1.4
         start.matrixMinMaxOut(); //exc 1.6
 
-        ObjectDeepClone object = new ObjectDeepClone("Tall ", 14);
+        ObjectDeepClone object = new ObjectDeepClone("Tall ", 14, new DeepClone());
         ObjectDeepClone objectClone = object.clone();
         objectClone.setName("Nick ");
         System.out.println("\n" + object.getName() + object.getAge() + "\n" + objectClone.getName() + objectClone.getAge()); //exc 1.7
     }
 
-    public void footbalMatch() throws IOException{
+    public void footballMatch() throws IOException{
         // exc 1.1
         System.out.println("Write match score X Y, and your score X Y");
 
@@ -31,7 +31,6 @@ public class Main{
 
             int x = (sc1 == us1 && sc2 == us2 ? 2 : sc1 > sc2 && us1 > us2 ? 1 : sc1 < sc2 && us1 < us2 ? 1 : 0);
             System.out.println(x);
-
     }
 
     public void rhombusDisplay() throws IOException{
