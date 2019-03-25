@@ -5,13 +5,14 @@
 public final class ImmutableExample {
 	private String name;
 
-	ImmutableExample (String name) {
+	ImmutableExample(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
 	}
+
 	// no setter
 	public static void main(String[] args) {
 		ImmutableExample obj = new ImmutableExample("Immutable");

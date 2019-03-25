@@ -2,7 +2,7 @@
 2.1 Написать паттерн Builder
  */
 public class RPGMainTest {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		RPGComplexBuilder rpgComplexBuilder = new RPGComplexBuilder();
 		RPGHumanMaleMageBuilder rpgHumanMaleMageBuilder = new RPGHumanMaleMageBuilder();
 

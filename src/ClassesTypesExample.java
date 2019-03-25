@@ -30,12 +30,14 @@ public class ClassesTypesExample { //exc 1.2
 		classesTypesExample.outerMethod();
 
 	}
+
 	// Nested Inner classes
 	class NestedInner {
 		public void show() {
 			System.out.println("Method of Nested inner class");
 		}
 	}
+
 	// Method of Local Inner classes
 	public void outerMethod() {
 		System.out.println("Outer Method");
