@@ -52,6 +52,6 @@ public class ObjectDeepClone implements Cloneable{
 			return false;
 		}
 		ObjectDeepClone objectDeepClone = (ObjectDeepClone) obj;
-		return (objectDeepClone.age == this.age && objectDeepClone.name == this.name && objectDeepClone.deepClone == this.deepClone);
+		return (objectDeepClone.age == this.age && objectDeepClone.name == this.name && objectDeepClone.deepClone.equals(this.deepClone));
 	}
 }
