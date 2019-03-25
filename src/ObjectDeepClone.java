@@ -42,4 +42,16 @@ public class ObjectDeepClone implements Cloneable{
 	public String toString() {
 		return name + " " + age + " " + deepClone;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this){
+			return true;
+		}
+		if(!(obj instanceof ObjectDeepClone)){
+			return false;
+		}
+		ObjectDeepClone objectDeepClone = (ObjectDeepClone) obj;
+		return (objectDeepClone.age == this.age && objectDeepClone.name == this.name && objectDeepClone.deepClone == this.deepClone);
+	}
 }
