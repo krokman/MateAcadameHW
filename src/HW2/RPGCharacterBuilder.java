@@ -10,7 +10,6 @@ public abstract class RPGCharacterBuilder {
 	public void createNewRPGCharacter(){
 		rpgCharacter = new RPGCharacter();
 	}
-
 	public abstract void buildSex();
 	public abstract void buildRace();
 	public abstract void buildRPGCharacterClass();
