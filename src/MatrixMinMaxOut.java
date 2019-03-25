@@ -1,36 +1,39 @@
 public class MatrixMinMaxOut {
-	public void matrixMinMaxOut(){
+	public int[][] createMatrix(int borderI, int borderJ) {
+		int[][] matrix = new int[borderI][borderJ];
+
+		for (int i = 0; i < matrix.length; i++) { // initializing matrix with random numbers < 50
+			for (int j = 0; j < matrix[i].length; j++) {
+				matrix[i][j] = (int) (Math.random() * 50);
+			}
+		}
+		return matrix;
+	}
+
+	public void matrixMin(int[][] matrix) {
 		// exc 1.6
-		int border = 4;
-		int[][] matrix = new int[border][border];
-
-		for (int i = 0; i < border; i++) { // initializing matrix with random numbers < 50
-			for (int j = 0; j < border; j++) {
-				matrix[i][j] = (int)(Math.random() * 50);
-			}
-		}
-
-		for (int i = 0; i < border; i++) {
-			System.out.println();
-			for (int j = 0; j < border; j++) {
-				System.out.print(matrix[i][j] + " ");
-			}
-		}
-
 		int min = matrix[0][0];
-		int max = matrix[0][0];
-
-		for (int i = 0; i < border; i++) {
-			for (int j = 0; j < border; j++) {
-				if(matrix[i][j] > max){
-					max = matrix[i][j];
-				}
-				if(matrix[i][j] < min){
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (matrix[i][j] < min) {
 					min = matrix[i][j];
 				}
 			}
 		}
-		System.out.println("\nMax = " + max + " Min = " + min);
+		System.out.println("\nMin =" + min);
+	}
+
+	public void matrixMax(int[][] matrix) {
+		// exc 1.6
+		int max = matrix[0][0];
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (matrix[i][j] > max) {
+					max = matrix[i][j];
+				}
+			}
+		}
+		System.out.println("\nMin =" + max);
 	}
 }
 

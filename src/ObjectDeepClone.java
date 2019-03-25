@@ -1,9 +1,9 @@
-public class ObjectDeepClone implements Cloneable{
+public class ObjectDeepClone implements Cloneable {
 	private String name;
 	private int age;
 	private DeepClone deepClone;
 
-	public ObjectDeepClone(String name, int age, DeepClone deepClone){
+	public ObjectDeepClone(String name, int age, DeepClone deepClone) {
 
 		this.name = name;
 		this.age = age;
@@ -27,7 +27,7 @@ public class ObjectDeepClone implements Cloneable{
 	}
 
 	@Override
-	public ObjectDeepClone clone() throws CloneNotSupportedException{
+	public ObjectDeepClone clone() throws CloneNotSupportedException {
 		ObjectDeepClone cloneObj = (ObjectDeepClone) super.clone();
 		cloneObj.deepClone = this.deepClone.clone();
 		return cloneObj;
@@ -45,10 +45,10 @@ public class ObjectDeepClone implements Cloneable{
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == this){
+		if (obj == this) {
 			return true;
 		}
-		if(!(obj instanceof ObjectDeepClone)){
+		if (!(obj instanceof ObjectDeepClone)) {
 			return false;
 		}
 		ObjectDeepClone objectDeepClone = (ObjectDeepClone) obj;

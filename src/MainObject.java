@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 public class MainObject {
 	public static void main(String[] args) throws CloneNotSupportedException {
 		ObjectDeepClone object = new ObjectDeepClone("Tall ", 14, new DeepClone());

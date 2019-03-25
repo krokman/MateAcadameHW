@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 public class DegreeOf {
 	public void degreeOf() {
 		// exc 1.3
-		System.out.println("\nWrite number and degree");
+		System.out.println("\nWrite number and power of number");
 
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 			int number = Integer.parseInt(reader.readLine());
