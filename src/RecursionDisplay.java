@@ -4,9 +4,10 @@ public class RecursionDisplay {
 		int number = 3;
 		int numberOfRowElements = 4;
 
-		System.out.println(fibonacci(recursionNumber));
-		System.out.println(factorial(0));
-		System.out.println(taylor(number, numberOfRowElements));
+		System.out.println("Fibonacci of " + recursionNumber + " " + fibonacci(recursionNumber));
+		System.out.println("Factorial of " + recursionNumber + " " + factorial(0));
+		System.out.println("Taylor f(e^x) where (x = 3, Number of row elements = 4) " +
+				taylor(number, numberOfRowElements));
 	}
 
 	public static int factorial(int number) {
@@ -26,12 +27,14 @@ public class RecursionDisplay {
 		}
 	}
 
-	public static double taylor(int number, int numberOfRowElements) { // e^x
+	// e^x
+	public static double taylor(int number, int numberOfRowElements) {
 		if (numberOfRowElements == 0) {
 			return 1;
 		}
 		double result;
-		result = taylor(number - 1, numberOfRowElements) + Math.pow(number, numberOfRowElements) / factorial(numberOfRowElements);
+		result = taylor(number, numberOfRowElements - 1) +
+				Math.pow(number, numberOfRowElements) / factorial(numberOfRowElements);
 		return result;
 	}
 }
