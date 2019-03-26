@@ -25,6 +25,14 @@ public class ObjectDeepClone implements Cloneable {
 		this.age = age;
 	}
 
+	public DeepClone getDeepClone() {
+		return deepClone;
+	}
+
+	public void setDeepClone(DeepClone deepClone) {
+		this.deepClone = deepClone;
+	}
+
 	@Override
 	public ObjectDeepClone clone() throws CloneNotSupportedException {
 		ObjectDeepClone cloneObj = (ObjectDeepClone) super.clone();
@@ -51,7 +59,7 @@ public class ObjectDeepClone implements Cloneable {
 			return false;
 		}
 		ObjectDeepClone objectDeepClone = (ObjectDeepClone) obj;
-		return (objectDeepClone.age == this.age && objectDeepClone.name == this.name
+		return (objectDeepClone.age == this.age && objectDeepClone.name.equals(this.name)
 				&& objectDeepClone.deepClone.equals(this.deepClone));
 	}
 }

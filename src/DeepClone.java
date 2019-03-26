@@ -1,4 +1,4 @@
-public class DeepClone implements Cloneable{
+public class DeepClone implements Cloneable {
 	private String name;
 	private int age;
 
