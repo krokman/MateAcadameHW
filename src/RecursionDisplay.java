@@ -5,7 +5,7 @@ public class RecursionDisplay {
 		int numberOfRowElements = 4;
 
 		System.out.println("Fibonacci of " + recursionNumber + " " + fibonacci(recursionNumber));
-		System.out.println("Factorial of " + recursionNumber + " " + factorial(0));
+		System.out.println("Factorial of " + recursionNumber + " " + factorial(recursionNumber));
 		System.out.println("Taylor f(e^x) where (x = 3, Number of row elements = 4) " +
 				taylor(number, numberOfRowElements));
 	}
