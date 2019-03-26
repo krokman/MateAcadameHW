@@ -1,16 +1,15 @@
 public class RecursionDisplay {
 	public static void main(String[] args) {
-		RecursionDisplay recursionDisplay = new RecursionDisplay();
 		int recursionNumber = 6;
 		int number = 3;
 		int numberOfRowElements = 4;
 
-		System.out.println(recursionDisplay.fibonacci(recursionNumber));
-		System.out.println(recursionDisplay.factorial(0));
-		System.out.println(recursionDisplay.taylor(number, numberOfRowElements));
+		System.out.println(fibonacci(recursionNumber));
+		System.out.println(factorial(0));
+		System.out.println(taylor(number, numberOfRowElements));
 	}
 
-	public int factorial(int number) {
+	public static int factorial(int number) {
 		int result;
 		if (number == 0) {
 			return 1;
@@ -19,7 +18,7 @@ public class RecursionDisplay {
 		return result;
 	}
 
-	public long fibonacci(int number) {
+	public static long fibonacci(int number) {
 		if (number <= 1) {
 			return number;
 		} else {
@@ -27,12 +26,12 @@ public class RecursionDisplay {
 		}
 	}
 
-	public double taylor(int numberOfRowElements, int number) { // e^x
+	public static double taylor(int number, int numberOfRowElements) { // e^x
 		if (numberOfRowElements == 0) {
 			return 1;
 		}
 		double result;
-		result = taylor(numberOfRowElements - 1, number) + Math.pow(number, numberOfRowElements) / factorial(numberOfRowElements);
+		result = taylor(number - 1, numberOfRowElements) + Math.pow(number, numberOfRowElements) / factorial(numberOfRowElements);
 		return result;
 	}
 }

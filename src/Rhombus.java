@@ -5,33 +5,39 @@ public class Rhombus {
 	}
 
 	public static void rhombus(int size) {
-		int sizeOfRhombus = size * 2;
-		double half = sizeOfRhombus / 2;
-
-		for (int i = 1; i <= size; i++) {
-			for (int j = 0; j <= sizeOfRhombus; j++) {
+		int sizeOfRhombus = size - 1;
+		for (int i = 0; i < size; i++) {
+			// loop for initially space,
+			// before star printing
+			for (int j = 0; j < sizeOfRhombus; j++)
 				System.out.print(" ");
-			}
 
-			for (int j = 1; j <= i; j++) {
+			// Print i+1 stars
+			for (int j = 0; j <= i; j++)
 				System.out.print("* ");
-			}
 
-			sizeOfRhombus--;
 			System.out.print("\n");
+			sizeOfRhombus--;
 		}
 
-		for (int i = sizeOfRhombus - 1; i >= 1; i--) {
-			for (int j = 0; j <= half + 2; j++) {
+		// Repeat again in
+		// reverse order
+		sizeOfRhombus = 1;
+
+		// run loop (parent loop)
+		// till number of rows
+		for (int i = size - 1; i > 0; i--) {
+			// loop for initially space,
+			// before star printing
+			for (int j = 0; j < sizeOfRhombus; j++)
 				System.out.print(" ");
-			}
 
-			for (int j = i; j >= 1; j--) {
+			// Print i stars
+			for (int j = 0; j < i; j++)
 				System.out.print("* ");
-			}
 
-			half++;
 			System.out.print("\n");
+			sizeOfRhombus++;
 		}
 	}
 }

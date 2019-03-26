@@ -8,8 +8,8 @@ public class MatrixMinMaxOut {
 
 	public int[][] createMatrix(int matrixRows, int matrixColumns) {
 		int[][] matrix = new int[matrixRows][matrixColumns];
-
-		for (int i = 0; i < matrix.length; i++) { // initializing matrix with random numbers < 50
+		// initializing matrix with random numbers < 50
+		for (int i = 0; i < matrix.length; i++) {
 			System.out.println();
 			for (int j = 0; j < matrix[i].length; j++) {
 				matrix[i][j] = (int) (Math.random() * 50);
