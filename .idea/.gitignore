@@ -1,20 +1,23 @@
-#### ignore all .idea files ...
-*
+# Compiled class file
+*.class
 
-#### except
+# Log file
+*.log
 
-# Version Control configuration for your project
-!vcs.xml
+# BlueJ files
+*.ctxt
 
-# how IDEA should treat the text files in your project
-!encodings.xml
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# automatic code formatting
-!codeStyleSettings.xml
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# project specific words
-!dictionaries
-
-!copyrights
-!misc.xml
-!sqldialects.xml
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
