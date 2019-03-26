@@ -1,8 +1,15 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class RecursionDisplay {
+	public static void main(String[] args) {
+		RecursionDisplay recursionDisplay = new RecursionDisplay();
+		int recursionNumber = 6;
+		int e = 3;
+		int x = 4;
+
+		System.out.println(recursionDisplay.fibonacci(recursionNumber));
+		System.out.println(recursionDisplay.factorial(recursionNumber));
+		System.out.println(recursionDisplay.taylor(e, x));
+	}
+
 	public int factorial(int number) {
 		int result;
 		if (number == 1) {
@@ -20,14 +27,12 @@ public class RecursionDisplay {
 		}
 	}
 
-	private static double getCosTaylor(double y, double x) {
-		if (y > 999) {
+	public double taylor(int e, int x) { // e^x
+		if (e == 1) {
 			return 1;
 		}
-		return 1 - x * x / ((2 * y - 1) * 2 * y) * getCosTaylor(y + 1, x);
-	}
-
-	private static double getSinTaylor(double y, double x) {
-		return getCosTaylor(y, x - 1.569);
+		double result;
+		result = taylor(x, e - 1) + Math.pow(x, e - 1) / factorial(e - 1);
+		return result;
 	}
 }

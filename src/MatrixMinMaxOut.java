@@ -1,6 +1,13 @@
 public class MatrixMinMaxOut {
-	public int[][] createMatrix(int borderI, int borderJ) {
-		int[][] matrix = new int[borderI][borderJ];
+	public static void main(String[] args) {
+		MatrixMinMaxOut test = new MatrixMinMaxOut();
+		int[][] matrixTest = test.createMatrix(4, 6);
+		test.matrixMax(matrixTest);
+		test.matrixMin(matrixTest);
+	}
+
+	public int[][] createMatrix(int matrixRows, int matrixColumns) {
+		int[][] matrix = new int[matrixRows][matrixColumns];
 
 		for (int i = 0; i < matrix.length; i++) { // initializing matrix with random numbers < 50
 			for (int j = 0; j < matrix[i].length; j++) {
@@ -33,7 +40,7 @@ public class MatrixMinMaxOut {
 				}
 			}
 		}
-		System.out.println("\nMin =" + max);
+		System.out.println("\nMax =" + max);
 	}
 }
 
