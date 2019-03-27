@@ -6,29 +6,28 @@
 public class SortUtilsMainTest {
 
 	public static void main(String[] args) {
-		int[] array1 = {5, 6, 7, 8, 12, 15, 3, 4};
-		int[] array2 = {1, 2, 25, 17, 18, 23};
-		int[] array3;
-		int[] array4 = {25, 12, 4, 13, 18};
+		int[] firstArrayForMerge = {5, 6, 7, 8, 12, 15, 3, 4};
+		int[] secondArrayForMerge = {1, 2, 25, 17, 18, 23};
+		int[] arrayForMerge;
+		int[] arrayForBubbleSort = {25, 12, 4, 13, 18};
 
+		displayArray(firstArrayForMerge);
+		displayArray(secondArrayForMerge);
 		System.out.println("Merge sort array");
-		array3 = SortUtils.mergeSort(array1, array2);
-		displayArray(array3);
+		arrayForMerge = SortUtils.mergeSort(firstArrayForMerge, secondArrayForMerge);
+		displayArray(arrayForMerge);
 		System.out.println();
 
+		displayArray(arrayForBubbleSort);
 		System.out.println("Bubble sort array");
-		displayArray(array1);
-		System.out.println();
-
-		System.out.println("Bubble sort array");
-		SortUtils.bubbleSort(array4);
-		displayArray(array4);
-
+		SortUtils.bubbleSort(arrayForBubbleSort);
+		displayArray(arrayForBubbleSort);
 	}
 
 	public static void displayArray(int[] array) {
 		for (int x : array) {
 			System.out.print(x + " ");
 		}
+		System.out.println();
 	}
 }

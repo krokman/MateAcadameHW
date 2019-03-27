@@ -30,17 +30,20 @@ public class SortUtils {
 		bubbleSort(copyOfSecondArray);
 
 		int[] outArray = new int[copyOfFirstArray.length + copyOfSecondArray.length];
-		int i = 0;
-		int j = 0;
-		int k = 0;
-		while (i < copyOfFirstArray.length && j < copyOfSecondArray.length) {
-			outArray[k++] = copyOfFirstArray[i] < copyOfSecondArray[j] ?
-					copyOfFirstArray[i++] : copyOfSecondArray[j++];
+		int firstArrayNumberIndex = 0;
+		int secondArrayNumberIndex = 0;
+		int outArrayNumberIndex = 0;
+		while (firstArrayNumberIndex < copyOfFirstArray.length && secondArrayNumberIndex < copyOfSecondArray.length) {
+			outArray[outArrayNumberIndex++] = copyOfFirstArray[firstArrayNumberIndex] <
+					copyOfSecondArray[secondArrayNumberIndex] ?
+					copyOfFirstArray[firstArrayNumberIndex++] : copyOfSecondArray[secondArrayNumberIndex++];
 		}
-		if (i < copyOfFirstArray.length) {
-			arraycopy(copyOfFirstArray, i, outArray, k, copyOfFirstArray.length - i);
-		} else if (j < copyOfSecondArray.length) {
-			arraycopy(copyOfSecondArray, j, outArray, k, copyOfSecondArray.length - j);
+		if (firstArrayNumberIndex < copyOfFirstArray.length) {
+			arraycopy(copyOfFirstArray, firstArrayNumberIndex, outArray,
+					outArrayNumberIndex, copyOfFirstArray.length - firstArrayNumberIndex);
+		} else if (secondArrayNumberIndex < copyOfSecondArray.length) {
+			arraycopy(copyOfSecondArray, secondArrayNumberIndex, outArray,
+					outArrayNumberIndex, copyOfSecondArray.length - secondArrayNumberIndex);
 		}
 		return outArray;
 	}
