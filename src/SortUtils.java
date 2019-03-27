@@ -22,30 +22,43 @@ public class SortUtils {
 		return array;
 	}
 
-	public static int[] mergeSort(int[] firstArray, int[] secondArray) {
-		int[] copyOfFirstArray = Arrays.copyOf(firstArray, firstArray.length);
-		int[] copyOfSecondArray = Arrays.copyOf(secondArray, secondArray.length);
-
-		bubbleSort(copyOfFirstArray);
-		bubbleSort(copyOfSecondArray);
-
-		int[] outArray = new int[copyOfFirstArray.length + copyOfSecondArray.length];
-		int firstArrayNumberIndex = 0;
-		int secondArrayNumberIndex = 0;
-		int outArrayNumberIndex = 0;
-		while (firstArrayNumberIndex < copyOfFirstArray.length && secondArrayNumberIndex < copyOfSecondArray.length) {
-			outArray[outArrayNumberIndex++] = copyOfFirstArray[firstArrayNumberIndex] <
-					copyOfSecondArray[secondArrayNumberIndex] ?
-					copyOfFirstArray[firstArrayNumberIndex++] : copyOfSecondArray[secondArrayNumberIndex++];
+	public static void mergeSort(int[] array, int arrayLenght) {
+		if (arrayLenght < 2) {
+			return;
 		}
-		if (firstArrayNumberIndex < copyOfFirstArray.length) {
-			arraycopy(copyOfFirstArray, firstArrayNumberIndex, outArray,
-					outArrayNumberIndex, copyOfFirstArray.length - firstArrayNumberIndex);
-		} else if (secondArrayNumberIndex < copyOfSecondArray.length) {
-			arraycopy(copyOfSecondArray, secondArrayNumberIndex, outArray,
-					outArrayNumberIndex, copyOfSecondArray.length - secondArrayNumberIndex);
+		int mid = arrayLenght / 2;
+		int[] arrayFirstHalf = new int[mid];
+		int[] arraySecondHalf = new int[arrayLenght - mid];
+
+		for (int i = 0; i < mid; i++) {
+			arrayFirstHalf[i] = array[i];
 		}
-		return outArray;
+		for (int i = mid; i < arrayLenght; i++) {
+			arraySecondHalf[i - mid] = array[i];
+		}
+		mergeSort(arrayFirstHalf, mid);
+		mergeSort(arraySecondHalf, arrayLenght - mid);
+
+		merge(array, arrayFirstHalf, arraySecondHalf, mid, arrayLenght - mid);
+	}
+
+	public static void merge(
+			int[] a, int[] l, int[] r, int left, int right) {
+
+		int i = 0, j = 0, k = 0;
+		while (i < left && j < right) {
+			if (l[i] <= r[j]) {
+				a[k++] = l[i++];
+			} else {
+				a[k++] = r[j++];
+			}
+		}
+		while (i < left) {
+			a[k++] = l[i++];
+		}
+		while (j < right) {
+			a[k++] = r[j++];
+		}
 	}
 
 	public static void swap(int firstNumberIndex, int secondNumberIndex, int[] array) {

@@ -6,15 +6,12 @@
 public class SortUtilsMainTest {
 
 	public static void main(String[] args) {
-		int[] firstArrayForMerge = {5, 6, 7, 8, 12, 15, 3, 4};
-		int[] secondArrayForMerge = {1, 2, 25, 17, 18, 23};
-		int[] arrayForMerge;
+		int[] arrayForMerge = {5, 6, 7, 8, 12, 15, 3, 4};
 		int[] arrayForBubbleSort = {25, 12, 4, 13, 18};
 
-		displayArray(firstArrayForMerge);
-		displayArray(secondArrayForMerge);
+		displayArray(arrayForMerge);
 		System.out.println("Merge sort array");
-		arrayForMerge = SortUtils.mergeSort(firstArrayForMerge, secondArrayForMerge);
+		SortUtils.mergeSort(arrayForMerge, arrayForMerge.length);
 		displayArray(arrayForMerge);
 		System.out.println();
 
