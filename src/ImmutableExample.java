@@ -3,9 +3,9 @@
  */
 // make this class final, no one can extend this class
 public final class ImmutableExample {
-	private String name;
+	private final String name;
 
-	ImmutableExample(String name) {
+	public ImmutableExample(String name) {
 		this.name = name;
 	}
 

@@ -11,21 +11,24 @@ public class SortUtilsMainTest {
 		int[] array3;
 		int[] array4 = {25, 12, 4, 13, 18};
 
+		System.out.println("Merge sort array");
 		array3 = SortUtils.mergeSort(array1, array2);
-		for (int x : array3) {
-			System.out.print(x + " ");
-		}
-
+		displayArray(array3);
 		System.out.println();
-		for (int x : array1) {
-			System.out.print(x + " ");
-		}
 
+		System.out.println("Bubble sort array");
+		displayArray(array1);
 		System.out.println();
+
+		System.out.println("Bubble sort array");
 		SortUtils.bubbleSort(array4);
-		for (int x : array4) {
+		displayArray(array4);
+
+	}
+
+	public static void displayArray(int[] array) {
+		for (int x : array) {
 			System.out.print(x + " ");
 		}
-
 	}
 }

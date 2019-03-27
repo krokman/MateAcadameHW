@@ -10,15 +10,11 @@ import static java.lang.System.arraycopy;
 public class SortUtils {
 	public static int[] bubbleSort(int[] array) {
 		boolean isSorted = false;
-		int buff;
-
 		while (!isSorted) {
 			isSorted = true;
 			for (int i = 0; i < array.length - 1; i++) {
 				if (array[i] > array[i + 1]) {
-					buff = array[i];
-					array[i] = array[i + 1];
-					array[i + 1] = buff;
+					swap(i, i + 1, array);
 					isSorted = false;
 				}
 			}
@@ -26,23 +22,32 @@ public class SortUtils {
 		return array;
 	}
 
-	public static int[] mergeSort(int[] arrayIn1, int[] arrayIn2) {
-		int[] array1 = Arrays.copyOf(arrayIn1, arrayIn1.length);
-		int[] array2 = Arrays.copyOf(arrayIn2, arrayIn2.length);
+	public static int[] mergeSort(int[] firstArray, int[] secondArray) {
+		int[] copyOfFirstArray = Arrays.copyOf(firstArray, firstArray.length);
+		int[] copyOfSecondArray = Arrays.copyOf(secondArray, secondArray.length);
 
-		bubbleSort(array1);
-		bubbleSort(array2);
+		bubbleSort(copyOfFirstArray);
+		bubbleSort(copyOfSecondArray);
 
-		int[] array3 = new int[array1.length + array2.length];
-		int i = 0, j = 0, k = 0;
-		while (i < array1.length && j < array2.length) {
-			array3[k++] = array1[i] < array2[j] ? array1[i++] : array2[j++];
+		int[] outArray = new int[copyOfFirstArray.length + copyOfSecondArray.length];
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		while (i < copyOfFirstArray.length && j < copyOfSecondArray.length) {
+			outArray[k++] = copyOfFirstArray[i] < copyOfSecondArray[j] ?
+					copyOfFirstArray[i++] : copyOfSecondArray[j++];
 		}
-		if (i < array1.length) {
-			arraycopy(array1, i, array3, k, array1.length - i);
-		} else if (j < array2.length) {
-			arraycopy(array2, j, array3, k, array2.length - j);
+		if (i < copyOfFirstArray.length) {
+			arraycopy(copyOfFirstArray, i, outArray, k, copyOfFirstArray.length - i);
+		} else if (j < copyOfSecondArray.length) {
+			arraycopy(copyOfSecondArray, j, outArray, k, copyOfSecondArray.length - j);
 		}
-		return array3;
+		return outArray;
+	}
+
+	public static void swap(int firstNumberIndex, int secondNumberIndex, int[] array) {
+		int buffer = array[firstNumberIndex];
+		array[firstNumberIndex] = array[secondNumberIndex];
+		array[secondNumberIndex] = buffer;
 	}
 }

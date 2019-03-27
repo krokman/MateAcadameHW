@@ -1,17 +1,24 @@
-public abstract class RPGCharacterBuilder {
-	protected RPGCharacter rpgCharacter;
+public class RPGCharacterBuilder implements RPGBuilder {
+	private RPGRace race;
+	private RPGClass characterClass;
+	private boolean sex;
 
-	public RPGCharacter getRpgCharacter() {
-		return rpgCharacter;
+	@Override
+	public void isSex(boolean sex) {
+		this.sex = sex;
 	}
 
-	public void createNewRPGCharacter() {
-		rpgCharacter = new RPGCharacter();
+	@Override
+	public void setRace(RPGRace race) {
+		this.race = race;
 	}
 
-	public abstract void buildSex();
+	@Override
+	public void setRPGCharacterClass(RPGClass characterClass) {
+		this.characterClass = characterClass;
+	}
 
-	public abstract void buildRace();
-
-	public abstract void buildRPGCharacterClass();
+	public RPGCharacter getRPGCharacter() {
+		return new RPGCharacter(race, characterClass, sex);
+	}
 }

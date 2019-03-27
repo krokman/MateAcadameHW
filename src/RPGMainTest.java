@@ -3,14 +3,16 @@
  */
 public class RPGMainTest {
 	public static void main(String[] args) {
-		RPGComplexBuilder rpgComplexBuilder = new RPGComplexBuilder();
-		RPGHumanMaleMageBuilder rpgHumanMaleMageBuilder = new RPGHumanMaleMageBuilder();
+		RPGConstructorOfHeroes constructorOfHeroes = new RPGConstructorOfHeroes();
 
-		rpgComplexBuilder.setRPGCharacterBuilder(rpgHumanMaleMageBuilder);
-		rpgComplexBuilder.constructRPGCharacter();
+		RPGCharacterBuilder rpgBuilder = new RPGCharacterBuilder();
 
-		RPGCharacter rpgCharacter1 = rpgComplexBuilder.getRPGCharacter();
+		constructorOfHeroes.constructHumanMageMale(rpgBuilder);
+		RPGCharacter Stan = rpgBuilder.getRPGCharacter();
 
-		System.out.println(rpgCharacter1.isSex() + rpgCharacter1.getRace() + rpgCharacter1.getCharacterClass());
+		constructorOfHeroes.constructElfRangerMale(rpgBuilder);
+		RPGCharacter Hyspan = rpgBuilder.getRPGCharacter();
+
+		System.out.println(Hyspan.toString() + " " + Stan.toString());
 	}
 }
